@@ -1,0 +1,14 @@
+.RestaurantInfo {
+    display: flex;
+    flex-direction: row;
+    padding: 20px
+}
+
+.restImage{
+    width: 150px;
+    height: 150px;
+}
+
+.restInfo {
+    padding: 10px;
+}

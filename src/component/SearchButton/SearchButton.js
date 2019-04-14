@@ -1,19 +1,15 @@
-import React, {Component} from 'react';
-import './SubmitButton.css'
+import React from 'react';
+import './SearchButton.css'
 
-class SubmitButton extends Component {
-    buttonOnPress = () => {
-        // console.log("pressed")
-    };
+const searchButton = (props) => {
+    return (
+        <div className="SearchButton">
+            <button className="button" onClick={ props.onClick }>Search</button>
+        </div>
+    );
+};
 
-    render() {
-        return (
-            <button className="SubmitButton" onKeyPress={this.buttonOnPress}>Search</button>
-        );
-    }
-}
-
-export default SubmitButton;
+export default searchButton;
 
 
 

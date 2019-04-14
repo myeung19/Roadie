@@ -1,12 +1,19 @@
 import React from 'react';
+import "./RestaurantInfo.css"
 
 const restaurantInfo = (props) => {
     const data = props.data;
     return (
-       <div>
-           <div className="restimage"></div>
-           <div className="restInfo"></div>
-       </div>
+        <div className="RestaurantInfo">
+            <div>
+                <img className="restImage" src={ data.image_url } alt="" />
+            </div>
+            <div className="restInfo">
+                <p>{ data.name }</p>
+                <p>Rating: { data.rating }</p>
+                <p>{ data.distance.toFixed(2) } meters away</p>
+            </div>
+        </div>
     );
 };
 

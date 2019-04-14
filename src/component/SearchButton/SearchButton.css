@@ -1,8 +1,17 @@
-.SubmitButton {
+.SearchButton {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    /*margin-left: -10% ;*/
+    /*margin-right: 110% ;*/
+    margin-top: 40px;
+}
+
+.button {
     color: #fff;
     background-color: #7971ea;
     border-color: #7971ea;
-    width: 100% !important;
+    width: 80% !important;
     display: block;
     border-radius: 30px;
     padding: 10px 30px;
