@@ -34,7 +34,8 @@ class App extends Component {
             }).then(res => {
             console.log(res.data.result.results[0].cost_estimates);
             this.setState({
-                rideData: res.data.result.results[0].cost_estimates
+                rideData: res.data.result.results[0].cost_estimates,
+                distance: res.data.result.results[0].cost_estimates[0].estimated_distance_miles,
             })
         });
     };
@@ -58,7 +59,7 @@ class App extends Component {
 
 
     render() {
-        const { rideData, foodData } = this.state;
+        const { rideData, foodData, distance } = this.state;
         return (
             <div>
                 <SearchButton onClick={ this.buttonOnClick } />
@@ -69,6 +70,8 @@ class App extends Component {
                             rideData !== null ?
                                 <>
                                     <WeatherWidget location={window.dLocation.geometry.location}/>
+                                    <h2>Total distance - {distance} miles</h2>
+                                    <br />
                                     {
                                         rideData.map(e => (
                                             <RideInfo data={ e } />
