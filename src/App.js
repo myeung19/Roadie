@@ -14,7 +14,7 @@ class App extends Component {
     };
 
     buttonOnClick = () => {
-        if(window.oLocation === undefined && window.dLocation !== undefined) {
+        if (window.oLocation !== undefined && window.dLocation !== undefined) {
             console.log(window.oLocation);
             console.log(window.dLocation);
             this.fetchRideInfo(window.oLocation.geometry.location, window.dLocation.geometry.location);
@@ -62,20 +62,25 @@ class App extends Component {
         return (
             <div>
                 <SearchButton onClick={ this.buttonOnClick } />
+                <br /><br />
                 <div className="Content">
                     <div className="Info">
                         {
                             rideData !== null ?
-                                rideData.map(e => (
-                                    <RideInfo data={ e } />
-                                )) : null
+                                <>
+                                    <WeatherWidget location={window.dLocation.geometry.location}/>
+                                    {
+                                        rideData.map(e => (
+                                            <RideInfo data={ e } />
+                                        ))
+                                    }
+                                </> : null
                         }
                     </div>
                     <div className="Restaurants">
                         {
                             foodData !== null ?
                                 <>
-                                    <WeatherWidget location={window.dLocation.geometry.location}/>
                                     <h6>{ window.dLocation.geometry.location.formatted_address }</h6>
                                     {
                                         foodData.map(e => (
