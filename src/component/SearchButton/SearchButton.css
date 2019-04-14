@@ -1,0 +1,9 @@
+.SubmitButton {
+    color: #fff;
+    background-color: #7971ea;
+    border-color: #7971ea;
+    width: 100% !important;
+    display: block;
+    border-radius: 30px;
+    padding: 10px 30px;
+}
